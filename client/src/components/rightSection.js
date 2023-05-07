@@ -220,9 +220,10 @@ export default function RightSection({
         body: formData,
       });
       const val = await response.json();
+      console.log("val ========>", val);
       if (val.status === false)
         throw new Error(
-          val.msg || "An error occurred while submitting the form."
+          val.message || "An error occurred while submitting the form."
         );
       // Display success message and reset form values
       alert(
